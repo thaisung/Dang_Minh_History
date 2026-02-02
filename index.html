@@ -5,71 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lịch Sử Việt Nam - Từ Thời Kỳ Chống Pháp Đến Nay</title>
     <link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
     <style>
+        /* Reset cơ bản */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.8;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            background-color: #f0f0f0;
             padding: 20px;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 960px;
             margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            animation: fadeIn 1s ease-in;
+            background: #fff;
+            border: 1px solid #ddd;
+            padding-bottom: 20px;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
+        /* Header đơn giản */
         header {
-            background: linear-gradient(135deg, #ff0000 0%, #da251d 100%);
+            background-color: #b30000;
             color: white;
-            padding: 60px 40px;
+            padding: 30px 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            border-bottom: 5px solid #ffcc00;
         }
 
         .header-logo {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 20px;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
             background: white;
             border-radius: 50%;
-            padding: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: logoFloat 3s ease-in-out infinite;
+            padding: 5px;
+            border: 2px solid #ddd;
         }
 
         .header-logo img {
@@ -78,188 +54,121 @@
             object-fit: contain;
         }
 
-        @keyframes logoFloat {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        header::before {
-            content: "⭐";
-            position: absolute;
-            font-size: 200px;
-            opacity: 0.1;
-            top: -50px;
-            right: -30px;
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
         h1 {
-            font-size: 2.5em;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-size: 2em;
+            text-transform: uppercase;
+            margin-bottom: 5px;
         }
 
         .group-name {
-            font-size: 1.4em;
-            font-weight: 500;
-            color: #ffeaa7;
-            margin: 10px 0;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            font-weight: 300;
-            opacity: 0.95;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #ffcc00;
         }
 
         .divider {
-            width: 100px;
-            height: 3px;
-            background: white;
-            margin: 20px auto;
+            width: 150px;
+            height: 1px;
+            background: #ffcc00;
+            margin: 15px auto;
         }
 
         main {
-            padding: 50px 40px;
+            padding: 30px;
         }
 
+        /* Các phần nội dung */
         .section {
-            margin-bottom: 50px;
-            padding: 30px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-radius: 15px;
-            border-left: 5px solid #da251d;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .section:last-child {
+            border-bottom: none;
         }
 
         .section h2 {
-            color: #da251d;
-            font-size: 1.8em;
-            margin-bottom: 20px;
+            color: #b30000;
+            font-size: 1.5em;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
         }
 
         .section-number {
-            background: #da251d;
+            background: #333;
             color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            font-size: 1.2em;
-            flex-shrink: 0;
-        }
-
-        .section p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        .highlights {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        .highlights h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
-        }
-
-        li::before {
-            content: "🔸";
-            position: absolute;
-            left: 0;
+            font-size: 0.8em;
         }
 
         .timeline {
-            background: linear-gradient(to right, #da251d, #ff6b6b);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 30px;
             display: inline-block;
+            background: #eee;
+            color: #333;
+            padding: 5px 15px;
             font-weight: bold;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(218, 37, 29, 0.3);
-        }
-
-        footer {
-            background: #2d3748;
-            color: white;
-            text-align: center;
-            padding: 30px;
             font-size: 0.9em;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
         }
 
-        .conclusion {
-            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            margin-top: 30px;
-            border: 3px solid #da251d;
+        /* Điểm nổi bật */
+        .highlights {
+            background: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #b30000;
+            margin: 15px 0;
         }
 
-        .conclusion h2 {
-            color: #da251d;
-            margin-bottom: 20px;
-            font-size: 2em;
-        }
-
-        .conclusion p {
-            color: #2d3748;
+        .highlights h3 {
             font-size: 1.1em;
-            line-height: 2;
+            margin-bottom: 10px;
+            color: #333;
         }
 
-        /* Media Styles */
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        li {
+            padding: 5px 0;
+        }
+
+        /* Phần xử lý Ảnh và Logo Overlay 
+           ------------------------------
+        */
         .media-container {
-            margin: 25px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-            position: relative;
+            margin: 15px 0;
+            border: 1px solid #ccc; /* Viền khung ảnh */
+            background: #eee;
+            position: relative; /* Quan trọng để định vị logo con */
         }
 
+        .section-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* CSS cho Logo trên ảnh (Đã bật lại) */
         .logo-overlay {
             position: absolute;
-            top: 15px;
-            left: 15px;
-            width: 80px;
-            height: 80px;
-            background: white;
-            padding: 8px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            top: 10px;
+            left: 10px;
+            width: 60px;  /* Kích thước nhỏ gọn */
+            height: 60px;
+            background: #fff; /* Nền trắng đục */
+            padding: 5px;
+            border: 1px solid #999; /* Viền xám đậm cho rõ nét */
             z-index: 10;
         }
 
@@ -269,28 +178,12 @@
             object-fit: contain;
         }
 
-        .section-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .section-video {
-            width: 100%;
-            height: auto;
-            display: block;
-            background: #000;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        /* YouTube Embed Styles */
+        /* YouTube Embed */
         .youtube-embed {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            background: #000;
         }
 
         .youtube-embed iframe {
@@ -304,303 +197,47 @@
 
         .video-caption {
             text-align: center;
-            font-style: italic;
+            font-size: 0.85em;
+            padding: 8px;
+            background: #f5f5f5;
             color: #666;
-            padding: 10px;
-            background: white;
-            margin: 0;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Phần kết luận */
+        .conclusion {
+            background-color: #fff8e1;
+            border: 1px solid #ffe082;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .conclusion h2 {
+            color: #b30000;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
             font-size: 0.9em;
+            margin-top: 20px;
         }
 
-        /* Scroll Animation */
-        .section {
-            opacity: 0;
-            animation: slideIn 0.8s ease forwards;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .section:nth-child(1) { animation-delay: 0.1s; }
-        .section:nth-child(2) { animation-delay: 0.2s; }
-        .section:nth-child(3) { animation-delay: 0.3s; }
-        .section:nth-child(4) { animation-delay: 0.4s; }
-        .section:nth-child(5) { animation-delay: 0.5s; }
-        .section:nth-child(6) { animation-delay: 0.6s; }
-
-        /* Desktop Hover Effects */
-        @media (min-width: 769px) {
-            .section:hover {
-                transform: translateX(10px);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            }
-
-            .section-image:hover {
-                transform: scale(1.02);
-            }
-        }
-
-        /* Tablet Responsive (≤768px) */
         @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-
-            header {
-                padding: 40px 20px;
-            }
-
-            .header-logo {
-                width: 80px;
-                height: 80px;
-                margin-bottom: 15px;
-            }
-
-            h1 {
-                font-size: 1.8em;
-            }
-
-            .group-name {
-                font-size: 1.1em;
-            }
-
-            .subtitle {
-                font-size: 1em;
-            }
-
-            .divider {
-                width: 80px;
-            }
-
-            main {
-                padding: 30px 20px;
-            }
-
-            .section {
-                padding: 20px;
-                margin-bottom: 30px;
-            }
-
-            .section:active {
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-            }
-
-            .section h2 {
-                font-size: 1.5em;
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
-            }
-
-            .section-number {
-                width: 35px;
-                height: 35px;
-                font-size: 1em;
-            }
-
-            .timeline {
-                font-size: 0.9em;
-                padding: 12px 20px;
-            }
-
-            .highlights {
-                padding: 15px;
-            }
-
-            .highlights h3 {
-                font-size: 1.15em;
-            }
-
-            li {
-                font-size: 0.95em;
-                padding: 8px 0;
-            }
-
+            body { padding: 10px; }
+            main { padding: 15px; }
+            h1 { font-size: 1.5em; }
+            
+            /* Thu nhỏ logo overlay trên điện thoại */
             .logo-overlay {
-                width: 60px;
-                height: 60px;
-                top: 10px;
-                left: 10px;
-                padding: 5px;
-            }
-
-            .conclusion {
-                padding: 30px 20px;
-            }
-
-            .conclusion h2 {
-                font-size: 1.6em;
-            }
-
-            .conclusion p {
-                font-size: 1em;
-            }
-
-            footer {
-                padding: 20px;
-                font-size: 0.85em;
-            }
-        }
-
-        /* Mobile Responsive (≤480px) */
-        @media (max-width: 480px) {
-            body {
-                padding: 8px;
-            }
-
-            .container {
-                border-radius: 15px;
-            }
-
-            header {
-                padding: 30px 15px;
-            }
-
-            .header-logo {
-                width: 70px;
-                height: 70px;
-                margin-bottom: 12px;
-                padding: 8px;
-            }
-
-            header::before {
-                font-size: 150px;
-                top: -30px;
-                right: -20px;
-            }
-
-            h1 {
-                font-size: 1.5em;
-            }
-
-            .group-name {
-                font-size: 1em;
-            }
-
-            .subtitle {
-                font-size: 0.9em;
-            }
-
-            .divider {
-                width: 60px;
-                height: 2px;
-                margin: 15px auto;
-            }
-
-            main {
-                padding: 20px 15px;
-            }
-
-            .section {
-                padding: 15px;
-                margin-bottom: 25px;
-                border-radius: 12px;
-            }
-
-            .section h2 {
-                font-size: 1.3em;
-                gap: 8px;
-            }
-
-            .section-number {
-                width: 32px;
-                height: 32px;
-                font-size: 0.95em;
-            }
-
-            .section p {
-                font-size: 0.95em;
-                text-align: left;
-            }
-
-            .timeline {
-                font-size: 0.85em;
-                padding: 10px 18px;
-            }
-
-            .highlights {
-                padding: 12px;
-                border-radius: 8px;
-            }
-
-            .highlights h3 {
-                font-size: 1.05em;
-            }
-
-            li {
-                font-size: 0.9em;
-                padding: 6px 0;
-                padding-left: 25px;
-            }
-
-            li::before {
-                font-size: 0.85em;
-            }
-
-            .media-container {
-                border-radius: 8px;
-                margin: 20px 0;
-            }
-
-            .logo-overlay {
-                width: 50px;
-                height: 50px;
-                top: 8px;
-                left: 8px;
-                padding: 4px;
-                border-radius: 8px;
-            }
-
-            .video-caption {
-                font-size: 0.8em;
-                padding: 8px;
-            }
-
-            .conclusion {
-                padding: 25px 15px;
-                border-radius: 12px;
-            }
-
-            .conclusion h2 {
-                font-size: 1.4em;
-                margin-bottom: 15px;
-            }
-
-            .conclusion p {
-                font-size: 0.95em;
-                line-height: 1.7;
-            }
-
-            footer {
-                padding: 15px;
-                font-size: 0.8em;
-            }
-        }
-
-        /* Landscape Mobile */
-        @media (max-height: 768px) and (orientation: landscape) {
-            header {
-                padding: 30px 40px;
-            }
-
-            header::before {
-                font-size: 120px;
-            }
-
-            main {
-                padding: 30px 40px;
-            }
-
-            .section {
-                padding: 20px;
+                width: 40px;
+                height: 40px;
+                padding: 3px;
             }
         }
     </style>
@@ -609,7 +246,7 @@
     <div class="container">
         <header>
             <div class="header-logo">
-                <img src="logo.png" alt="Logo Nhóm Cô Đơn 1">
+                <img src="logo.png" alt="Logo">
             </div>
             <h1>LỊCH SỬ VIỆT NAM</h1>
             <p class="group-name">Nhóm Cô Đơn 1</p>
@@ -624,7 +261,7 @@
                 
                 <div class="media-container">
                     <div class="logo-overlay">
-                        <img src="logo.png" alt="Logo Nhóm Cô Đơn 1">
+                        <img src="logo.png" alt="Logo Nhóm">
                     </div>
                     <img src="image/1.jpg" alt="Thời kỳ Pháp thuộc" class="section-image">
                 </div>
@@ -645,19 +282,19 @@
                 
                 <div class="media-container">
                     <div class="youtube-embed">
-                        <iframe width="1242" height="699" src="https://www.youtube.com/embed/QA9tNvmcF9I" title="Phong Trào Cần Vương - Tóm tắt lịch sử Việt Nam - EZ Sử" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/QA9tNvmcF9I" title="Video" allowfullscreen></iframe>
                     </div>
                     <p class="video-caption">Video: Thời kỳ Pháp xâm lược và các phong trào yêu nước</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2><span class="section-number">2</span>Cách mạng Tháng Tám và thành lập nước Việt Nam Dân chủ Cộng hòa</h2>
+                <h2><span class="section-number">2</span>Cách mạng Tháng Tám và thành lập nước</h2>
                 <div class="timeline">1945</div>
                 
                 <div class="media-container">
                     <div class="logo-overlay">
-                        <img src="logo.png" alt="Logo Nhóm Cô Đơn 1">
+                        <img src="logo.png" alt="Logo Nhóm">
                     </div>
                     <img src="image/2.jpg" alt="Cách mạng Tháng Tám" class="section-image">
                 </div>
@@ -667,7 +304,7 @@
                 
                 <div class="media-container">
                     <div class="youtube-embed">
-                        <iframe width="1242" height="699" src="https://www.youtube.com/embed/zgR6nH84wsQ" title="Cách mạng tháng 8 | Tóm tắt nhanh lịch sử Việt Nam -  EZ Sử" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/zgR6nH84wsQ" title="Video" allowfullscreen></iframe>
                     </div>
                     <p class="video-caption">Video: Cách mạng Tháng Tám và Tuyên ngôn Độc lập</p>
                 </div>
@@ -679,7 +316,7 @@
                 
                 <div class="media-container">
                     <div class="logo-overlay">
-                        <img src="logo.png" alt="Logo Nhóm Cô Đơn 1">
+                        <img src="logo.png" alt="Logo Nhóm">
                     </div>
                     <img src="image/3.webp" alt="Kháng chiến chống Pháp" class="section-image">
                 </div>
@@ -698,14 +335,14 @@
                 
                 <div class="media-container">
                     <div class="youtube-embed">
-                        <iframe width="1242" height="699" src="https://www.youtube.com/embed/CD8sKixEDsI" title="Tóm tắt nhanh Chiến Dịch Điện Biên Phủ ( 1954 ) | Kênh tóm tắt lịch sử - EZ Sử" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/CD8sKixEDsI" title="Video" allowfullscreen></iframe>
                     </div>
                     <p class="video-caption">Video: Chiến thắng Điện Biên Phủ 1954</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2><span class="section-number">4</span>Kháng chiến chống Mỹ và thống nhất đất nước</h2>
+                <h2><span class="section-number">4</span>Kháng chiến chống Mỹ và thống nhất</h2>
                 <div class="timeline">1954 – 1975</div>
                 <p>Sau Hiệp định Genève, đất nước tạm thời chia cắt làm hai miền.</p>
                 
@@ -721,7 +358,7 @@
             </div>
 
             <div class="section">
-                <h2><span class="section-number">5</span>Việt Nam sau thống nhất và công cuộc Đổi mới</h2>
+                <h2><span class="section-number">5</span>Việt Nam sau thống nhất và Đổi mới</h2>
                 <div class="timeline">1975 – nay</div>
                 <p>Sau năm 1975, Việt Nam bước vào giai đoạn khắc phục hậu quả chiến tranh và xây dựng đất nước.</p>
                 <p><strong>Năm 1986</strong>, Đảng và Nhà nước tiến hành công cuộc Đổi mới, chuyển sang nền kinh tế thị trường định hướng xã hội chủ nghĩa.</p>
@@ -732,13 +369,12 @@
                         <li>Kinh tế phát triển, đời sống nhân dân được cải thiện</li>
                         <li>Quan hệ đối ngoại mở rộng</li>
                         <li>Việt Nam gia nhập WTO năm 2007</li>
-                        <li>Vị thế quốc tế ngày càng được nâng cao</li>
                     </ul>
                 </div>
             </div>
 
             <div class="conclusion">
-                <h2>🇻🇳 Kết luận 🇻🇳</h2>
+                <h2>Kết luận</h2>
                 <p>Từ thời kỳ chống Pháp đến nay, lịch sử Việt Nam là hành trình đấu tranh kiên cường để giành độc lập, thống nhất và phát triển. Những thành quả hôm nay là kết quả của sự hy sinh và nỗ lực không ngừng của nhiều thế hệ người Việt Nam.</p>
             </div>
         </main>
